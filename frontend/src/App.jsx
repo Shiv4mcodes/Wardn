@@ -3,6 +3,7 @@ import HeroHeader from './components/HeroHeader';
 import ReportForm from './components/ReportForm';
 import KanbanBoard from './components/KanbanBoard';
 import AnalyticsView from './components/AnalyticsView';
+
 import { API_BASE } from './config';
 
 export default function App() {
