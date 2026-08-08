@@ -3,8 +3,7 @@ import HeroHeader from './components/HeroHeader';
 import ReportForm from './components/ReportForm';
 import KanbanBoard from './components/KanbanBoard';
 import AnalyticsView from './components/AnalyticsView';
-
-const API_BASE = 'http://localhost:8000';
+import { API_BASE } from './config';
 
 export default function App() {
   const [tickets, setTickets] = useState([]);
@@ -67,7 +66,7 @@ export default function App() {
       }
     } catch (err) {
       console.error('[App] Error submitting ticket:', err);
-      alert('Error submitting ticket. Make sure backend is running on http://localhost:8000.');
+      alert(`Error submitting ticket. Make sure backend is running at ${API_BASE}.`);
     } finally {
       setIsSubmitting(false);
     }

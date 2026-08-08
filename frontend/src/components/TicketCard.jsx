@@ -3,6 +3,7 @@ import {
   Clock, ShieldAlert, ChevronRight, UserCheck, 
   MapPin, X, Check, CopyCheck, AlertTriangle, Footprints, Play
 } from 'lucide-react';
+import { getImageUrl } from '../config';
 
 const ESCALATION_THRESHOLD_SECONDS = 45;
 
@@ -107,7 +108,7 @@ export default function TicketCard({ ticket, onUpdateStatus }) {
         {ticket.image_path && (
           <div className="mb-3 rounded-xl bg-[#0d0908] border border-[#f97316]/15 overflow-hidden h-28 shadow-inner">
             <img 
-              src={`http://localhost:8000${ticket.image_path}`} 
+              src={getImageUrl(ticket.image_path)} 
               alt="Ticket Evidence" 
               className="w-full h-full object-cover"
               onError={(e) => { e.target.style.display = 'none'; }}
