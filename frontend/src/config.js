@@ -1,11 +1,12 @@
 // Base API URL configuration
 // Normalizes VITE_API_URL by trimming whitespace, removing quotes, and stripping trailing slashes.
 const getApiBaseUrl = () => {
-  const rawUrl = import.meta.env.VITE_API_URL;
-  if (!rawUrl) return 'http://localhost:8000';
+  const rawUrl = import.meta.env.VITE_API_URL || 'https://wardn-backend-tt0s.onrender.com';
+  if (!rawUrl) return 'https://wardn-backend-tt0s.onrender.com';
   
   const trimmed = rawUrl.trim().replace(/^["']|["']$/g, '');
-  if (!trimmed) return 'http://localhost:8000';
+  if (!trimmed) return 'https://wardn-backend-tt0s.onrender.com';
+
 
   // Strip trailing slashes to prevent double slashes when joining endpoint paths
   return trimmed.replace(/\/+$/, '');
